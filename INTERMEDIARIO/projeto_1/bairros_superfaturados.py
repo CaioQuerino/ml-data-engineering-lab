@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 
 # 1. Carregamento dos dados
-path = 'projeto_1/mercado_imobiliario_complexo.csv'
+path = 'INTERMEDIARIO/projeto_1/mercado_imobiliario_complexo.csv'
 df = pd.read_csv(path)
 
 # 2. Limpeza e Tratamento de Nulos
@@ -54,7 +54,7 @@ analise_negocio['status_mercado'] = analise_negocio['erro_percentual'].apply(
 analise_negocio['bairro_nome'] = le_bairro.inverse_transform(analise_negocio['bairro'])
 
 print("\n" + "="*70)
-print(" 🏠 ANÁLISE DE PRECIFICAÇÃO E STATUS DE MERCADO ")
+print(" ANÁLISE DE PRECIFICAÇÃO E STATUS DE MERCADO ")
 print("="*70)
 colunas_print = ['bairro_nome', 'area_m2', 'preco_real', 'preco_previsto', 'status_mercado']
 print(analise_negocio[colunas_print].sort_values(by='preco_real', ascending=False).to_string(index=False))
@@ -66,7 +66,7 @@ correlacao_area = df['area_m2'].corr(df['preco_anunciado'])
 luxo = df[df['preco_anunciado'] > 5000000]
 
 print("\n" + "="*70)
-print(" 📊 DASHBOARD DE INSIGHTS (PROJETO 1 - 2026) ")
+print(" DASHBOARD DE INSIGHTS (PROJETO 1 - 2026) ")
 print("="*70)
 print(f"-> Confiabilidade do Modelo (R²): {r2_score(test_y, previsoes):.2f}")
 print(f"-> Erro Médio de Avaliação: R$ {mean_absolute_error(test_y, previsoes):,.2f}")

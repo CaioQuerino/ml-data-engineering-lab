@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 
 # 1. Carregamento dos dados
-path = 'projeto_1/mercado_imobiliario_complexo.csv'
+path = 'INTERMEDIARIO/projeto_1/mercado_imobiliario_complexo.csv'
 df = pd.read_csv(path)
 
 # 2. Limpeza e Tratamento de Nulos (Pré-processamento)
